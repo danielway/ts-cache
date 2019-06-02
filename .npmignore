@@ -1,0 +1,10 @@
+.idea/
+dist/
+node_modules/
+coverage/
+.rpt2_cache/
+src/
+test/
+tslint.json
+tsconfig.json
+rollup.config.js
