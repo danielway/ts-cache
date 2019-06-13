@@ -8,6 +8,10 @@
     "declarationMap": true,
     "declarationDir": "dist/types",
     "outDir": "dist",
-    "strict": true
-  }
+    "strict": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src"
+  ]
 }

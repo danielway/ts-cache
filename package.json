@@ -10,26 +10,53 @@
     "test:watch": "jest --coverage --watch",
     "build": "tsc && rollup -c"
   },
-  "repository": { "type": "git", "url": "git+https://github.com/danielway/ts-cache.git" },
-  "keywords": [ "typescript", "cache", "caching" ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielway/ts-cache.git"
+  },
+  "keywords": [
+    "typescript",
+    "cache",
+    "caching"
+  ],
   "author": "Daniel Way <projects@danieldway.com>",
   "license": "MIT",
-  "bugs": { "url": "https://github.com/danielway/ts-cache/issues" },
+  "bugs": {
+    "url": "https://github.com/danielway/ts-cache/issues"
+  },
   "homepage": "https://github.com/danielway/ts-cache#readme",
   "jest": {
-    "transform": { ".(ts|tsx)": "ts-jest" },
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
     "testRegex": "(/__test__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [ "ts", "tsx", "js" ],
-    "coveragePathIgnorePatterns": [ "/node_modules/", "/test/", "/dist/" ],
-    "collectCoverageFrom": [ "src/*.{js,ts}" ]
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/",
+      "/dist/"
+    ],
+    "collectCoverageFrom": [
+      "src/*.{js,ts}"
+    ]
   },
   "devDependencies": {
+    "@types/deep-equal": "^1.0.1",
     "@types/jest": "^24.0.13",
     "jest": "^24.8.0",
     "rollup": "^1.13.1",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.0.1",
     "rollup-plugin-typescript2": "^0.21.1",
     "ts-jest": "^24.0.2",
     "tslint": "^5.17.0",
     "typescript": "^3.5.1"
+  },
+  "dependencies": {
+    "deep-equal": "^1.0.1"
   }
 }
