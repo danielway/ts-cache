@@ -41,7 +41,8 @@
       "/dist/"
     ],
     "collectCoverageFrom": [
-      "src/*.{js,ts}"
+      "src/*.{js,ts}",
+      "!src/ts-cache.ts"
     ]
   },
   "devDependencies": {

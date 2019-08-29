@@ -1,2 +1,1 @@
-export { Dictionary } from "./dictionary/dictionary";
-export { ObjectDictionary } from "./dictionary/object-dictionary";
+export { Dictionary } from "./dictionary";
