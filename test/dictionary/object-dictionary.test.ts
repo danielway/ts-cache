@@ -1,19 +1,14 @@
-import {ObjectDictionary} from "../../src/dictionary/object-dictionary";
-import {ObjectDictionaryKey} from "../../src/dictionary/object-dictionary-key";
+import { ObjectDictionary } from "../../src/dictionary/object-dictionary";
 
 describe("ObjectDictionary", () => {
-    class TestKey implements ObjectDictionaryKey {
+    class TestKey {
         constructor(
             public propertyOne: string,
             public propertyTwo: number,
         ) { }
-        public equals(otherKey: TestKey): boolean {
-            return otherKey.propertyOne === this.propertyOne
-                && otherKey.propertyTwo === this.propertyTwo;
-        }
     }
 
-    // Helper to prepare a ObjectDictionary for testing
+    // Helper to prepare an ObjectDictionary for testing
     const setupDictionary = (items: Array<{key: TestKey, val: string}>): ObjectDictionary<TestKey, string> => {
         const dictionary = new ObjectDictionary<TestKey, string>();
         items.forEach((item) => dictionary.set(item.key, item.val));
@@ -33,7 +28,7 @@ describe("ObjectDictionary", () => {
     it("should return undefined for nonexistent keys", () => {
         const dictionary = setupDictionary([]);
 
-        expect(dictionary.get(new TestKey("testKeyString", 1))).toBeUndefined();
+        expect(dictionary.get(new TestKey("testKeyString", 1))).toBeNull();
     });
 
 });

@@ -1,16 +1,21 @@
-import {Dictionary} from "./dictionary";
-import {ObjectDictionaryKey} from "./object-dictionary-key";
+import * as equal_ from "fast-deep-equal";
+const equal = equal_;
+import { Dictionary } from "./dictionary";
 
-export class ObjectDictionary<K extends ObjectDictionaryKey, V> extends Dictionary<K, V> {
+/**
+ * A particular implementation of the Dictionary that makes use of deep-equivalence
+ * for objects and values of any type.
+ */
+export class ObjectDictionary<K, V> extends Dictionary<K, V> {
 
     private map: Array<{ key: K, val: V }> = [];
 
-    public get(key: K): V | undefined {
+    public get(key: K): V | null {
         const match = this.findInMap(key);
         if (match) {
             return match.val;
         } else {
-            return undefined;
+            return null;
         }
     }
 
@@ -23,10 +28,10 @@ export class ObjectDictionary<K extends ObjectDictionaryKey, V> extends Dictiona
         }
     }
 
-    private findInMap(key: K): { key: K, val: V } | undefined {
-        const matches = this.map.filter((item) => item.key.equals(key));
+    private findInMap(key: K): { key: K, val: V } | null {
+        const matches = this.map.filter((item) => equal(item.key, key));
         if (!matches || matches.length === 0) {
-            return undefined;
+            return null;
         } else if (matches.length > 1) {
             throw new Error("Duplicate keys in object dictionary.");
         } else {
