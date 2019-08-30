@@ -1,7 +1,7 @@
 import { Dictionary } from "./dictionary";
 
 /**
- * A dictionary-backed cache where each unique key's result from the loadValue instruction is cached.
+ * A dictionary-backed synchronous cache where each unique key's result from the loadValue instruction is cached.
  */
 export class DictionaryCache<K, V> {
 

@@ -1,5 +1,5 @@
 /**
- * A simple single-value cache with a specified load instruction.
+ * A simple single-value synchronous cache with a specified load instruction.
  */
 export class SimpleCache<V> {
 
