@@ -1,6 +1,6 @@
 {
   "name": "ts-cache",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A straight-forward TypeScript caching library.",
   "main": "dist/ts-cache.umd.js",
   "module": "dist/ts-cache.es5.js",
